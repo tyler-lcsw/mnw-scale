@@ -728,7 +728,7 @@
     .contact-method-label { color: var(--ink-soft); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
     .contact-method-value { font-family: var(--font-display); font-size: 1rem; font-weight: 700; overflow-wrap: anywhere; }
 
-    .contact-form {
+    .contact-card {
       display: grid;
       gap: var(--space-3);
       padding: clamp(28px, 5vw, 52px);
@@ -737,91 +737,10 @@
       box-shadow: var(--shadow);
     }
 
-    .contact-form h3 { font-size: var(--step-2); }
-
-    .form-note {
-      color: var(--ink-soft);
-      font-size: var(--step--1);
-      line-height: 1.5;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-3);
-    }
-
-    .field { display: grid; gap: 7px; }
-    .field-full { grid-column: 1 / -1; }
-
-    label {
-      font-family: var(--font-display);
-      font-size: 0.87rem;
-      font-weight: 700;
-    }
-
-    .required { color: var(--clay-strong); }
-
-    input, select, textarea {
-      width: 100%;
-      min-height: 50px;
-      padding: 11px 13px;
-      color: var(--ink);
-      background: var(--paper);
-      border: 1px solid #a99b93;
-      border-radius: var(--radius-sm);
-      transition: border-color var(--ease), box-shadow var(--ease), background var(--ease);
-    }
-
-    textarea {
-      min-height: 128px;
-      resize: vertical;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      outline: 0;
-      border-color: var(--evergreen);
-      box-shadow: 0 0 0 3px rgba(23, 59, 54, 0.15);
-      background: var(--surface);
-    }
-
-    [aria-invalid="true"] {
-      border-color: var(--error);
-      box-shadow: 0 0 0 3px rgba(161, 37, 37, 0.12);
-    }
-
-    .field-error {
-      min-height: 1.35em;
-      color: var(--error);
-      font-size: 0.83rem;
-      line-height: 1.35;
-    }
-
-    .form-status {
-      display: none;
-      padding: 12px 14px;
-      color: var(--success);
-      background: #e7f3ed;
-      border-left: 4px solid var(--success);
-      border-radius: var(--radius-sm);
-      font-size: 0.9rem;
-    }
-
-    .form-status.is-visible { display: block; }
-
-    .form-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .privacy-note {
-      max-width: 44ch;
-      color: var(--ink-soft);
-      font-size: 0.8rem;
-      line-height: 1.45;
-    }
+    .contact-card h3 { font-size: var(--step-2); }
+    .contact-card p { color: var(--ink-soft); }
+    .contact-card .button { justify-self: start; }
+    .contact-method-note { color: var(--ink-soft); font-size: 0.84rem; font-weight: 400; }
 
     .site-footer {
       padding: 42px 0;
@@ -904,17 +823,15 @@
 
     @media (max-width: 560px) {
       .brand-role { display: none; }
-      .hero-actions, .form-actions { align-items: stretch; flex-direction: column; }
-      .hero-actions .button, .form-actions .button { width: 100%; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
       .hero-note { align-items: flex-start; }
       .services-grid { grid-template-columns: 1fr; }
       .service, .service:nth-child(2n) { min-height: 0; border-right: 0; }
       .service-number { margin-bottom: 36px; }
       .principle { grid-template-columns: 1fr; gap: 8px; }
       .timeline-item { grid-template-columns: 1fr; gap: 8px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .field-full { grid-column: auto; }
-      .contact-form { padding-inline: 20px; }
+      .contact-card { padding-inline: 20px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -926,7 +843,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="assets/site.css?v=20260920">
+  <link rel="stylesheet" href="assets/site.css?v=20260920-2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -941,6 +858,7 @@
         <a href="emdr-therapy.html">EMDR Therapy</a>
         <a href="online-therapy.html">Online Therapy</a>
         <a href="experience.html">About Erin</a>
+        <a href="contact.html">Contact</a>
         <a class="button button-primary" href="index.html#contact">Schedule a free consultation</a>
       </nav>
     </div>
@@ -1140,81 +1058,43 @@
         <div class="contact-copy">
           <p class="eyebrow">Free consultation</p>
           <h2>You do not need to explain everything to take the first step.</h2>
-          <p class="section-copy">During the free 15-minute consultation, Erin will not ask you to describe the details of your trauma. Share only what feels comfortable. You can compare schedules, ask questions about therapy and how Erin works, and decide whether a next step feels right.</p>
-          <p class="welcome-note">Please contact us for the latest information about insurance and payment options.</p>
+          <p class="section-copy">During the free consultation, Erin will not ask you to describe the details of your trauma. Share only what feels comfortable. You can compare schedules, ask questions about therapy and how Erin works, and decide whether a next step feels right.</p>
+          <p class="welcome-note">New potential clients should begin by using the Schedule a free consultation button. The phone number is not the primary way to begin care.</p>
 
           <div class="contact-methods">
-            <a class="contact-method" href="tel:+13176986938">
+            <div class="contact-method">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z" /></svg>
               <span class="contact-method-copy">
-                <span class="contact-method-label">Phone</span>
-                <span class="contact-method-value">317-698-6938</span>
+                <span class="contact-method-label">Practice phone</span>
+                <span class="contact-method-value">463-444-8854</span>
+                <span class="contact-method-note">No texting, please. Listed for practice identification and limited practical matters.</span>
               </span>
-            </a>
-            <a class="contact-method" href="mailto:erin.barnes25@gmail.com">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><path d="m22 6-10 7L2 6" /></svg>
-              <span class="contact-method-copy">
-                <span class="contact-method-label">Email</span>
-                <span class="contact-method-value">erin.barnes25@gmail.com</span>
-              </span>
-            </a>
+            </div>
             <div class="contact-method">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
               <span class="contact-method-copy">
-                <span class="contact-method-label">Service area</span>
+                <span class="contact-method-label">Limited correspondence only</span>
+                <span class="contact-method-value">5868 E. 71st Street, Suite E-721<br>Indianapolis, IN 46220</span>
+                <span class="contact-method-note">This is not a practice address. Erin does not see clients in person.</span>
+              </span>
+            </div>
+            <div class="contact-method">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" /><path d="M2 12h20M12 2c2.5 2.7 3.8 6 3.8 10S14.5 19.3 12 22c-2.5-2.7-3.8-6-3.8-10S9.5 4.7 12 2Z" /></svg>
+              <span class="contact-method-copy">
+                <span class="contact-method-label">Service format</span>
                 <span class="contact-method-value">Online throughout Indiana</span>
               </span>
             </div>
           </div>
         </div>
 
-        <form class="contact-form" id="inquiry-form" novalidate>
-          <h3>Request a free consultation</h3>
-          <p class="form-note">This form opens a draft in your email app so you can request a consultation. It does not reserve a time. Please share only general contact information, not diagnoses, treatment records, or detailed clinical history.</p>
-
-          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
-              <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
-              <span class="field-error" id="name-error"></span>
-            </div>
-            <div class="field">
-              <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
-              <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-              <span class="field-error" id="email-error"></span>
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" aria-describedby="phone-error">
-              <span class="field-error" id="phone-error"></span>
-            </div>
-            <div class="field">
-              <label for="preference">Best way to reply</label>
-              <select id="preference" name="preference">
-                <option value="Email">Email</option>
-                <option value="Phone">Phone</option>
-                <option value="Either">Either</option>
-              </select>
-              <span class="field-error" aria-hidden="true"></span>
-            </div>
-            <div class="field field-full">
-              <label for="message">What are you looking for? <span class="required" aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" maxlength="500" required aria-describedby="message-help message-error"></textarea>
-              <span class="form-note" id="message-help">A sentence or two is enough. Please do not include private health information.</span>
-              <span class="field-error" id="message-error"></span>
-            </div>
-          </div>
-
-          <div class="form-actions">
-            <button class="button button-primary" type="submit">
-              Open email draft
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </button>
-            <p class="privacy-note">Your information stays in your email app until you choose to send it.</p>
-          </div>
-        </form>
+        <div class="contact-card">
+          <p class="eyebrow">How new clients begin</p>
+          <h3>Schedule a free consultation online.</h3>
+          <p>New potential clients should use the Schedule a free consultation button rather than calling to begin care. The consultation lets you compare schedules and ask questions without sharing trauma details.</p>
+          <p>Please contact the practice for the latest information about insurance and payment options.</p>
+          <a class="button button-secondary" href="contact.html">View complete contact details</a>
+        </div>
       </div>
     </section>
   </main>
@@ -1223,9 +1103,9 @@
     <div class="shell footer-grid">
       <div>
         <p class="footer-brand">Met Needs and Wellness, LLC</p>
-        <p class="footer-copy">Affirming online trauma therapy with Erin Barnes, LCSW, for adults located in Indiana. This website provides general professional information and a way to request a consultation. It does not establish a therapeutic relationship or provide emergency services. If you are in immediate danger, call 911.</p>
+        <p class="footer-copy">Affirming online trauma therapy with Erin Barnes, LCSW, for adults located in Indiana. This website provides general professional information about the practice and its services. It does not establish a therapeutic relationship or provide emergency services. If you are in immediate danger, call 911.</p>
       </div>
-      <div class="footer-links"><a href="index.html#support">Areas of Expertise</a><a href="emdr-therapy.html">EMDR Therapy</a><a href="online-therapy.html">Online Therapy</a><a href="cost-insurance.html">Cost &amp; Insurance</a><a href="experience.html">About Erin</a><a href="index.html#contact">Schedule a free consultation</a></div>
+      <div class="footer-links"><a href="index.html#support">Areas of Expertise</a><a href="emdr-therapy.html">EMDR Therapy</a><a href="online-therapy.html">Online Therapy</a><a href="cost-insurance.html">Cost &amp; Insurance</a><a href="experience.html">About Erin</a><a href="contact.html">Contact</a><a href="index.html#contact">Schedule a free consultation</a></div>
     </div>
   </footer>
 
@@ -1253,77 +1133,6 @@
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') setMenu(false);
-    });
-
-    const form = document.querySelector('#inquiry-form');
-    const status = document.querySelector('#form-status');
-    const fields = {
-      name: document.querySelector('#name'),
-      email: document.querySelector('#email'),
-      phone: document.querySelector('#phone'),
-      preference: document.querySelector('#preference'),
-      message: document.querySelector('#message')
-    };
-
-    function errorFor(field, message) {
-      const error = document.querySelector(`#${field.id}-error`);
-      field.setAttribute('aria-invalid', message ? 'true' : 'false');
-      if (error) error.textContent = message;
-      return !message;
-    }
-
-    function validate(field) {
-      const value = field.value.trim();
-
-      if (field.required && !value) {
-        return errorFor(field, field.id === 'message' ? 'Add a brief, general note so Erin knows why you are reaching out.' : `Enter your ${field.id}.`);
-      }
-
-      if (field.type === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-        return errorFor(field, 'Enter a complete email address, such as name@example.com.');
-      }
-
-      if (field.type === 'tel' && value && value.replace(/\D/g, '').length < 10) {
-        return errorFor(field, 'Enter a phone number with at least 10 digits, or leave this field blank.');
-      }
-
-      return errorFor(field, '');
-    }
-
-    [fields.name, fields.email, fields.phone, fields.message].forEach((field) => {
-      field.addEventListener('blur', () => validate(field));
-      field.addEventListener('input', () => {
-        if (field.getAttribute('aria-invalid') === 'true') validate(field);
-      });
-    });
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      status.classList.remove('is-visible');
-
-      const requiredFields = [fields.name, fields.email, fields.phone, fields.message];
-      const valid = requiredFields.map(validate).every(Boolean);
-
-      if (!valid) {
-        const firstInvalid = form.querySelector('[aria-invalid="true"]');
-        if (firstInvalid) firstInvalid.focus();
-        return;
-      }
-
-      const subject = encodeURIComponent(`Website inquiry from ${fields.name.value.trim()}`);
-      const body = encodeURIComponent([
-        `Name: ${fields.name.value.trim()}`,
-        `Email: ${fields.email.value.trim()}`,
-        `Phone: ${fields.phone.value.trim() || 'Not provided'}`,
-        `Preferred reply: ${fields.preference.value}`,
-        '',
-        'General inquiry:',
-        fields.message.value.trim()
-      ].join('\n'));
-
-      status.textContent = 'Your email app is opening. Review the draft and choose Send when you are ready.';
-      status.classList.add('is-visible');
-      window.location.href = `mailto:erin.barnes25@gmail.com?subject=${subject}&body=${body}`;
     });
   </script>
 </body>
